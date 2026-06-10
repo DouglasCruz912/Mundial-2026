@@ -1,143 +1,195 @@
-"""Genera app/db/seed/partidos_2026.json con los 104 partidos del Mundial 2026.
+"""Genera app/db/seed/partidos_2026.json desde el calendario oficial.
 
-Grupos según el sorteo oficial (dic 2025) + repechajes (mar 2026). Las
-eliminatorias usan placeholders ("Ganador P74"): el seed es idempotente por
-`numero`, así que basta re-ejecutarlo tras editar equipos/fechas, sin tocar
-resultados ya cargados.
+Fuente: openfootball/worldcup (github.com/openfootball/worldcup, 2026--usa),
+vendorizada en app/db/seed/fuentes/. Incluye fechas y horas oficiales con la
+zona horaria de cada sede (se convierten a UTC) y los cruces reales de las
+eliminatorias (2A v 2B, W74, etc.).
+
+Numeración: fase de grupos 1-72 en orden cronológico; eliminatorias 73-104
+según numeración oficial del archivo. El seed (seed_partidos.py) hace upsert
+por `numero` y nunca toca resultados.
 
 Uso: python -m scripts.generar_fixture
 """
 
 import json
+import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-GRUPOS = "ABCDEFGHIJKL"
-# Sorteo oficial del Mundial 2026 (cabeza de serie primero)
-EQUIPOS_POR_GRUPO = {
-    "A": ["México", "Sudáfrica", "Corea del Sur", "Chequia"],
-    "B": ["Canadá", "Bosnia y Herzegovina", "Catar", "Suiza"],
-    "C": ["Brasil", "Haití", "Marruecos", "Escocia"],
-    "D": ["Estados Unidos", "Paraguay", "Turquía", "Australia"],
-    "E": ["Alemania", "Ecuador", "Curazao", "Costa de Marfil"],
-    "F": ["Países Bajos", "Japón", "Suecia", "Túnez"],
-    "G": ["Bélgica", "Egipto", "Irán", "Nueva Zelanda"],
-    "H": ["España", "Cabo Verde", "Arabia Saudita", "Uruguay"],
-    "I": ["Francia", "Irak", "Noruega", "Senegal"],
-    "J": ["Argentina", "Argelia", "Austria", "Jordania"],
-    "K": ["Portugal", "Colombia", "RD Congo", "Uzbekistán"],
-    "L": ["Inglaterra", "Croacia", "Ghana", "Panamá"],
+FUENTES = Path(__file__).resolve().parent.parent / "app" / "db" / "seed" / "fuentes"
+DESTINO = Path(__file__).resolve().parent.parent / "app" / "db" / "seed" / "partidos_2026.json"
+
+EQUIPO_ES = {
+    "Mexico": "México",
+    "South Africa": "Sudáfrica",
+    "South Korea": "Corea del Sur",
+    "Czech Republic": "Chequia",
+    "Canada": "Canadá",
+    "Bosnia & Herzegovina": "Bosnia y Herzegovina",
+    "Qatar": "Catar",
+    "Switzerland": "Suiza",
+    "Brazil": "Brasil",
+    "Haiti": "Haití",
+    "Morocco": "Marruecos",
+    "Scotland": "Escocia",
+    "USA": "Estados Unidos",
+    "Paraguay": "Paraguay",
+    "Turkey": "Turquía",
+    "Australia": "Australia",
+    "Germany": "Alemania",
+    "Ecuador": "Ecuador",
+    "Curaçao": "Curazao",
+    "Ivory Coast": "Costa de Marfil",
+    "Netherlands": "Países Bajos",
+    "Japan": "Japón",
+    "Sweden": "Suecia",
+    "Tunisia": "Túnez",
+    "Belgium": "Bélgica",
+    "Egypt": "Egipto",
+    "Iran": "Irán",
+    "New Zealand": "Nueva Zelanda",
+    "Spain": "España",
+    "Cape Verde": "Cabo Verde",
+    "Saudi Arabia": "Arabia Saudita",
+    "Uruguay": "Uruguay",
+    "France": "Francia",
+    "Iraq": "Irak",
+    "Norway": "Noruega",
+    "Senegal": "Senegal",
+    "Argentina": "Argentina",
+    "Algeria": "Argelia",
+    "Austria": "Austria",
+    "Jordan": "Jordania",
+    "Portugal": "Portugal",
+    "DR Congo": "RD Congo",
+    "Uzbekistan": "Uzbekistán",
+    "Colombia": "Colombia",
+    "England": "Inglaterra",
+    "Croatia": "Croacia",
+    "Ghana": "Ghana",
+    "Panama": "Panamá",
 }
-# Horarios típicos de jornada (UTC)
-HORAS = [16, 19, 22]
 
-INICIO_GRUPOS = datetime(2026, 6, 11, tzinfo=timezone.utc)
-# Emparejamientos por jornada dentro de un grupo (índices 1-4)
-JORNADAS = [(1, 2), (3, 4), (1, 3), (4, 2), (4, 1), (2, 3)]
+MES = {"June": 6, "Jun": 6, "July": 7, "Jul": 7}
+
+FASE_POR_SECCION = {
+    "Round of 32": "dieciseisavos",
+    "Round of 16": "octavos",
+    "Quarter-final": "cuartos",
+    "Semi-final": "semifinal",
+    "Match for third place": "tercer_puesto",
+    "Final": "final",
+}
+
+RE_FECHA = re.compile(r"^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(June|July|Jun|Jul)\s+(\d{1,2})\s*$")
+RE_GRUPO = re.compile(r"^▪ Group ([A-L])\s*$")
+RE_PARTIDO_GRUPO = re.compile(
+    r"^\s+(\d{1,2}):(\d{2}) UTC([+-]\d{1,2})\s+(.+?)\s+v\s+(.+?)\s+@\s+(.+?)\s*$"
+)
+RE_PARTIDO_FINAL = re.compile(
+    r"^\s*\((\d{2,3})\)\s+(\d{1,2}):(\d{2}) UTC([+-]\d{1,2})\s+(\S+)\s+v\s+(\S+)\s+@\s+(.+?)\s*$"
+)
 
 
-def nombre_equipo(grupo: str, pos: int) -> str:
-    return EQUIPOS_POR_GRUPO[grupo][pos - 1]
+def a_utc(mes: str, dia: int, hora: int, minuto: int, offset: int) -> datetime:
+    local = datetime(2026, MES[mes], dia, hora, minuto, tzinfo=timezone(timedelta(hours=offset)))
+    return local.astimezone(timezone.utc)
 
 
-def generar() -> list[dict]:
+def etiqueta_eliminatoria(token: str) -> str:
+    """Traduce los códigos del bracket: 2A, 1E, 3A/B/C/D/F, W74, L101."""
+    if token.startswith("W"):
+        return f"Ganador P{token[1:]}"
+    if token.startswith("L"):
+        return f"Perdedor P{token[1:]}"
+    posicion, grupos = token[0], token[1:]
+    if "/" in grupos:
+        return f"{posicion}° Grupo {grupos}"
+    return f"{posicion}° Grupo {grupos}"
+
+
+def parsear_grupos() -> list[dict]:
     partidos: list[dict] = []
-    numero = 1
+    grupo: str | None = None
+    fecha: tuple[str, int] | None = None
+    for linea in (FUENTES / "openfootball_cup.txt").read_text(encoding="utf-8").splitlines():
+        if m := RE_GRUPO.match(linea):
+            grupo = m.group(1)
+            continue
+        if grupo is None:
+            continue
+        if m := RE_FECHA.match(linea.strip()):
+            fecha = (m.group(1), int(m.group(2)))
+            continue
+        if (m := RE_PARTIDO_GRUPO.match(linea)) and fecha is not None:
+            hora, minuto, offset = int(m.group(1)), int(m.group(2)), int(m.group(3))
+            local_en, visitante_en = m.group(4).strip(), m.group(5).strip()
+            partidos.append(
+                {
+                    "fase": "grupos",
+                    "grupo": grupo,
+                    "equipo_local": EQUIPO_ES[local_en],
+                    "equipo_visitante": EQUIPO_ES[visitante_en],
+                    "fecha_hora": a_utc(fecha[0], fecha[1], hora, minuto, offset),
+                }
+            )
+    assert len(partidos) == 72, f"Se esperaban 72 partidos de grupos, hay {len(partidos)}"
+    # Numeración cronológica (desempate por grupo para orden estable)
+    partidos.sort(key=lambda p: (p["fecha_hora"], p["grupo"]))
+    for i, p in enumerate(partidos, start=1):
+        p["numero"] = i
+    return partidos
 
-    # Fase de grupos: 12 grupos x 6 partidos = 72, en 3 jornadas (días 0-4, 5-9, 10-15)
-    for jornada in range(3):
-        for i, grupo in enumerate(GRUPOS):
-            local_idx, visitante_idx = JORNADAS[jornada * 2], JORNADAS[jornada * 2 + 1]
-            for par in (local_idx, visitante_idx):
-                dia = jornada * 5 + (i // 3)
-                hora = HORAS[i % 3]
-                fecha = INICIO_GRUPOS + timedelta(days=dia, hours=hora)
-                partidos.append(
-                    {
-                        "numero": numero,
-                        "fase": "grupos",
-                        "grupo": grupo,
-                        "equipo_local": nombre_equipo(grupo, par[0]),
-                        "equipo_visitante": nombre_equipo(grupo, par[1]),
-                        "fecha_hora": fecha.isoformat().replace("+00:00", "Z"),
-                    }
-                )
-                numero += 1
 
-    def eliminatoria(
-        fase: str, cantidad: int, inicio: datetime, etiqueta, por_dia: int = 2
-    ) -> None:
-        nonlocal numero
-        for i in range(cantidad):
-            fecha = inicio + timedelta(days=i // por_dia, hours=HORAS[i % por_dia])
-            local, visitante = etiqueta(i)
+def parsear_finales() -> list[dict]:
+    partidos: list[dict] = []
+    fase: str | None = None
+    fecha: tuple[str, int] | None = None
+    for linea in (
+        (FUENTES / "openfootball_cup_finals.txt").read_text(encoding="utf-8").splitlines()
+    ):
+        if linea.startswith("▪"):
+            seccion = linea.lstrip("▪").strip()
+            fase = FASE_POR_SECCION.get(seccion)
+            continue
+        if fase is None:
+            continue
+        if m := RE_FECHA.match(linea.strip()):
+            fecha = (m.group(1), int(m.group(2)))
+            continue
+        if (m := RE_PARTIDO_FINAL.match(linea)) and fecha is not None:
+            numero = int(m.group(1))
+            hora, minuto, offset = int(m.group(2)), int(m.group(3)), int(m.group(4))
             partidos.append(
                 {
                     "numero": numero,
                     "fase": fase,
                     "grupo": None,
-                    "equipo_local": local,
-                    "equipo_visitante": visitante,
-                    "fecha_hora": fecha.isoformat().replace("+00:00", "Z"),
+                    "equipo_local": etiqueta_eliminatoria(m.group(5)),
+                    "equipo_visitante": etiqueta_eliminatoria(m.group(6)),
+                    "fecha_hora": a_utc(fecha[0], fecha[1], hora, minuto, offset),
                 }
             )
-            numero += 1
-
-    # Dieciseisavos (ronda de 32): partidos 73-88
-    eliminatoria(
-        "dieciseisavos",
-        16,
-        datetime(2026, 6, 28, tzinfo=timezone.utc),
-        lambda i: (f"Clasificado {2*i+1}", f"Clasificado {2*i+2}"),
-        por_dia=3,
-    )
-    # Octavos: 89-96
-    eliminatoria(
-        "octavos",
-        8,
-        datetime(2026, 7, 4, tzinfo=timezone.utc),
-        lambda i: (f"Ganador P{73+2*i}", f"Ganador P{74+2*i}"),
-    )
-    # Cuartos: 97-100
-    eliminatoria(
-        "cuartos",
-        4,
-        datetime(2026, 7, 9, tzinfo=timezone.utc),
-        lambda i: (f"Ganador P{89+2*i}", f"Ganador P{90+2*i}"),
-    )
-    # Semifinales: 101-102
-    eliminatoria(
-        "semifinal",
-        2,
-        datetime(2026, 7, 14, tzinfo=timezone.utc),
-        lambda i: (f"Ganador P{97+2*i}", f"Ganador P{98+2*i}"),
-    )
-    # Tercer puesto: 103
-    eliminatoria(
-        "tercer_puesto",
-        1,
-        datetime(2026, 7, 18, tzinfo=timezone.utc),
-        lambda i: ("Perdedor P101", "Perdedor P102"),
-    )
-    # Final: 104
-    eliminatoria(
-        "final",
-        1,
-        datetime(2026, 7, 19, tzinfo=timezone.utc),
-        lambda i: ("Ganador P101", "Ganador P102"),
-    )
+    assert len(partidos) == 32, f"Se esperaban 32 partidos de eliminatorias, hay {len(partidos)}"
     return partidos
 
 
 def main() -> None:
-    partidos = generar()
-    assert len(partidos) == 104, f"Se esperaban 104 partidos, hay {len(partidos)}"
-    destino = Path(__file__).resolve().parent.parent / "app" / "db" / "seed" / "partidos_2026.json"
-    destino.parent.mkdir(parents=True, exist_ok=True)
-    destino.write_text(
-        json.dumps(partidos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    partidos = parsear_grupos() + parsear_finales()
+    assert len(partidos) == 104
+    assert sorted(p["numero"] for p in partidos) == list(range(1, 105))
+    serializables = [
+        {**p, "fecha_hora": p["fecha_hora"].isoformat().replace("+00:00", "Z")}
+        for p in sorted(partidos, key=lambda x: x["numero"])
+    ]
+    DESTINO.write_text(
+        json.dumps(serializables, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"Generados {len(partidos)} partidos en {destino}")
+    print(f"Generados {len(serializables)} partidos en {DESTINO}")
+    inaugural = serializables[0]
+    print(f"Inaugural: {inaugural['equipo_local']} vs {inaugural['equipo_visitante']} — {inaugural['fecha_hora']}")
+    print(f"Final: {serializables[-1]['fecha_hora']}")
 
 
 if __name__ == "__main__":

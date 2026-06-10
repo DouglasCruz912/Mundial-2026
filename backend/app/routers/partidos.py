@@ -18,7 +18,7 @@ Admin = Annotated[Usuario, Security(get_current_active_user, scopes=["admin"])]
 async def listar_partidos(
     session: SessionDep,
     user: Autenticado,
-    limit: Annotated[int, Query(ge=1, le=100)] = 100,
+    limit: Annotated[int, Query(ge=1, le=200)] = 200,
     offset: Annotated[int, Query(ge=0)] = 0,
     fase: str | None = None,
 ) -> list[PartidoPublic]:

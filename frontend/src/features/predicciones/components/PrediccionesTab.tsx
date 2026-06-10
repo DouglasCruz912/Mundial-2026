@@ -49,6 +49,11 @@ export function PrediccionesTab({ quinielaId }: { quinielaId: number }) {
     return { predichos, total: delGrupo.length };
   };
 
+  // Partidos de la vista actual sin predicción (para señalar qué falta)
+  const faltantes = visibles.filter(
+    (p) => !prediccionPorPartido.has(p.id) && p.goles_local === null,
+  );
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Fase del torneo">
@@ -82,6 +87,15 @@ export function PrediccionesTab({ quinielaId }: { quinielaId: number }) {
           ganadores de cada llave); se ajustarán con los resultados reales. Si un cruce sigue
           mostrando «1° Grupo E» o «3° Grupo …», te falta completar predicciones de esos grupos
           o definir el ganador de la llave anterior.
+        </p>
+      )}
+
+      {faltantes.length > 0 && faltantes.length <= 10 && (
+        <p className="rounded-lg border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800">
+          Te falta{faltantes.length === 1 ? "" : "n"} por predecir:{" "}
+          {faltantes
+            .map((p) => `#${p.numero} ${p.equipo_local} vs ${p.equipo_visitante}`)
+            .join(" · ")}
         </p>
       )}
 

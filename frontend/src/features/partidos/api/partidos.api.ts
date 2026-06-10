@@ -9,5 +9,6 @@ export const partidoKeys = {
 };
 
 export function fetchPartidos() {
-  return api("/api/v1/partidos?limit=100", z.array(partidoSchema));
+  // 104 partidos: el torneo completo cabe en una página
+  return api("/api/v1/partidos?limit=200", z.array(partidoSchema));
 }

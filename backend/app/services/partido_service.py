@@ -32,7 +32,12 @@ async def listar(
     offset: int,
     fase: str | None = None,
 ) -> list[Partido]:
-    stmt = select(Partido).order_by(Partido.fecha_hora).limit(limit).offset(offset)
+    stmt = (
+        select(Partido)
+        .order_by(Partido.fecha_hora, Partido.numero)
+        .limit(limit)
+        .offset(offset)
+    )
     if fase is not None:
         stmt = stmt.where(Partido.fase == fase)
     result = await session.execute(stmt)

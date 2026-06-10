@@ -10,8 +10,8 @@ import {
   type Partido,
   partidoComenzo,
 } from "@/features/partidos/schemas/partido.schema";
+import { EquipoConBandera } from "@/components/Bandera";
 import { ApiError } from "@/lib/apiClient";
-import { equipoConBandera } from "@/lib/banderas";
 
 import { useGuardarPrediccion } from "../hooks/usePredicciones";
 import {
@@ -73,10 +73,10 @@ export function PartidoPrediccionRow({ quinielaId, partido, prediccion }: Props)
           {partido.grupo !== null ? ` · Grupo ${partido.grupo}` : ""} ·{" "}
           {formatearFecha(partido.fecha_hora)}
         </p>
-        <p className="font-medium">
-          {equipoConBandera(partido.equipo_local)}{" "}
-          <span className="text-muted-foreground">vs</span>{" "}
-          {equipoConBandera(partido.equipo_visitante)}
+        <p className="flex flex-wrap items-center gap-1.5 font-medium">
+          <EquipoConBandera equipo={partido.equipo_local} />
+          <span className="text-muted-foreground">vs</span>
+          <EquipoConBandera equipo={partido.equipo_visitante} />
         </p>
         {partido.goles_local !== null && (
           <p className="text-sm">

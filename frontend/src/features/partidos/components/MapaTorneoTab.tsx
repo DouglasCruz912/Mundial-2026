@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Bandera } from "@/components/Bandera";
 import { useMisPredicciones } from "@/features/predicciones/hooks/usePredicciones";
-import { bandera } from "@/lib/banderas";
 import { cn } from "@/lib/utils";
 
 import { usePartidos } from "../hooks/usePartidos";
@@ -115,8 +115,13 @@ export function MapaTorneoTab({ quinielaId }: { quinielaId: number }) {
                 <CardContent className="space-y-2">
                   <ul className="grid grid-cols-2 gap-x-2 gap-y-1 text-sm">
                     {stats.equipos.map((equipo) => (
-                      <li key={equipo} className="truncate" title={equipo}>
-                        <span aria-hidden>{bandera(equipo)}</span> {equipo}
+                      <li
+                        key={equipo}
+                        className="flex items-center gap-1.5 truncate"
+                        title={equipo}
+                      >
+                        <Bandera equipo={equipo} />
+                        <span className="truncate">{equipo}</span>
                       </li>
                     ))}
                   </ul>

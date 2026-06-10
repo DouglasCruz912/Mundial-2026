@@ -1,74 +1,63 @@
-// Bandera emoji por nombre de equipo (los 48 clasificados al Mundial 2026).
-// Placeholders de eliminatorias ("Ganador P74") caen al fallback ⚽.
+// Código de bandera (flagcdn.com) por nombre de equipo — los 48 clasificados
+// al Mundial 2026. Inglaterra/Escocia usan los códigos regionales de flagcdn.
+// Placeholders de eliminatorias ("Ganador P74") devuelven null.
 
-const ISO_POR_EQUIPO: Record<string, string> = {
-  "México": "MX",
-  "Sudáfrica": "ZA",
-  "Corea del Sur": "KR",
-  "Chequia": "CZ",
-  "Canadá": "CA",
-  "Bosnia y Herzegovina": "BA",
-  "Catar": "QA",
-  "Suiza": "CH",
-  "Brasil": "BR",
-  "Haití": "HT",
-  "Marruecos": "MA",
-  "Estados Unidos": "US",
-  "Paraguay": "PY",
-  "Turquía": "TR",
-  "Australia": "AU",
-  "Alemania": "DE",
-  "Ecuador": "EC",
-  "Curazao": "CW",
-  "Costa de Marfil": "CI",
-  "Países Bajos": "NL",
-  "Japón": "JP",
-  "Suecia": "SE",
-  "Túnez": "TN",
-  "Bélgica": "BE",
-  "Egipto": "EG",
-  "Irán": "IR",
-  "Nueva Zelanda": "NZ",
-  "España": "ES",
-  "Cabo Verde": "CV",
-  "Arabia Saudita": "SA",
-  "Uruguay": "UY",
-  "Francia": "FR",
-  "Irak": "IQ",
-  "Noruega": "NO",
-  "Senegal": "SN",
-  "Argentina": "AR",
-  "Argelia": "DZ",
-  "Austria": "AT",
-  "Jordania": "JO",
-  "Portugal": "PT",
-  "Colombia": "CO",
-  "RD Congo": "CD",
-  "Uzbekistán": "UZ",
-  "Croacia": "HR",
-  "Ghana": "GH",
-  "Panamá": "PA",
+const CODIGO_POR_EQUIPO: Record<string, string> = {
+  "México": "mx",
+  "Sudáfrica": "za",
+  "Corea del Sur": "kr",
+  "Chequia": "cz",
+  "Canadá": "ca",
+  "Bosnia y Herzegovina": "ba",
+  "Catar": "qa",
+  "Suiza": "ch",
+  "Brasil": "br",
+  "Haití": "ht",
+  "Marruecos": "ma",
+  "Escocia": "gb-sct",
+  "Estados Unidos": "us",
+  "Paraguay": "py",
+  "Turquía": "tr",
+  "Australia": "au",
+  "Alemania": "de",
+  "Ecuador": "ec",
+  "Curazao": "cw",
+  "Costa de Marfil": "ci",
+  "Países Bajos": "nl",
+  "Japón": "jp",
+  "Suecia": "se",
+  "Túnez": "tn",
+  "Bélgica": "be",
+  "Egipto": "eg",
+  "Irán": "ir",
+  "Nueva Zelanda": "nz",
+  "España": "es",
+  "Cabo Verde": "cv",
+  "Arabia Saudita": "sa",
+  "Uruguay": "uy",
+  "Francia": "fr",
+  "Irak": "iq",
+  "Noruega": "no",
+  "Senegal": "sn",
+  "Argentina": "ar",
+  "Argelia": "dz",
+  "Austria": "at",
+  "Jordania": "jo",
+  "Portugal": "pt",
+  "Colombia": "co",
+  "RD Congo": "cd",
+  "Uzbekistán": "uz",
+  "Inglaterra": "gb-eng",
+  "Croacia": "hr",
+  "Ghana": "gh",
+  "Panamá": "pa",
 };
 
-// Inglaterra y Escocia no tienen ISO propio: emoji de etiqueta Unicode
-const BANDERAS_ESPECIALES: Record<string, string> = {
-  Inglaterra: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  Escocia: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-};
-
-function isoAEmoji(iso: string): string {
-  return [...iso].map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65)).join("");
+export function codigoBandera(equipo: string): string | null {
+  return CODIGO_POR_EQUIPO[equipo] ?? null;
 }
 
-export function bandera(equipo: string): string {
-  const especial = BANDERAS_ESPECIALES[equipo];
-  if (especial !== undefined) return especial;
-  const iso = ISO_POR_EQUIPO[equipo];
-  if (iso !== undefined) return isoAEmoji(iso);
-  return "⚽";
-}
-
-/** "🇲🇽 México" listo para mostrar. */
-export function equipoConBandera(equipo: string): string {
-  return `${bandera(equipo)} ${equipo}`;
+/** URL del PNG de la bandera en flagcdn (w40 = 40px de ancho, con @2x para retina). */
+export function urlBandera(codigo: string, ancho: 20 | 40 | 80 = 40): string {
+  return `https://flagcdn.com/w${ancho}/${codigo}.png`;
 }

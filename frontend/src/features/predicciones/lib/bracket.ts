@@ -82,30 +82,59 @@ export function resolverBracket(
       .sort(compararFilas)
       .slice(0, 8);
   }
-  const tercerosAsignados = new Set<string>();
-
   // 3. Eliminatorias en orden: las referencias (P74) siempre apuntan hacia atrás
   const eliminatorias = partidos
     .filter((p) => p.fase !== "grupos")
     .sort((a, b) => a.numero - b.numero);
+
+  // 3b. Asignación de terceros a sus slots con emparejamiento bipartito (Kuhn):
+  // una asignación voraz puede dejar slots sin equipo aunque exista solución.
+  const slotsTerceros: { clave: string; permitidos: Set<string> }[] = [];
+  for (const partido of eliminatorias) {
+    for (const lado of ["local", "visitante"] as const) {
+      const etiqueta = lado === "local" ? partido.equipo_local : partido.equipo_visitante;
+      const m = RE_TERCEROS.exec(etiqueta);
+      if (m !== null) {
+        slotsTerceros.push({ clave: `${partido.id}:${lado}`, permitidos: new Set(m[1].split("/")) });
+      }
+    }
+  }
+  const terceroPorSlot = new Map<string, string>();
+  if (tercerosClasificados.length > 0) {
+    const slotDeEquipo = new Map<string, number>();
+    const intentar = (slot: number, visitados: Set<string>): boolean => {
+      for (const fila of tercerosClasificados) {
+        if (!slotsTerceros[slot].permitidos.has(fila.grupo) || visitados.has(fila.equipo)) {
+          continue;
+        }
+        visitados.add(fila.equipo);
+        const ocupante = slotDeEquipo.get(fila.equipo);
+        if (ocupante === undefined || intentar(ocupante, visitados)) {
+          slotDeEquipo.set(fila.equipo, slot);
+          return true;
+        }
+      }
+      return false;
+    };
+    for (let slot = 0; slot < slotsTerceros.length; slot++) {
+      intentar(slot, new Set());
+    }
+    for (const [equipo, slot] of slotDeEquipo) {
+      terceroPorSlot.set(slotsTerceros[slot].clave, equipo);
+    }
+  }
+
   // ganador/perdedor simulado por número de partido
   const avance = new Map<number, { ganador: string | null; perdedor: string | null }>();
 
-  const resolverEtiqueta = (etiqueta: string): string | null => {
+  const resolverEtiqueta = (etiqueta: string, claveSlot: string): string | null => {
     let m = RE_POSICION.exec(etiqueta);
     if (m !== null) {
       const fila = tablas.get(m[2])?.[Number(m[1]) - 1];
       return fila?.equipo ?? null;
     }
-    m = RE_TERCEROS.exec(etiqueta);
-    if (m !== null) {
-      const permitidos = new Set(m[1].split("/"));
-      const elegido = tercerosClasificados.find(
-        (f) => permitidos.has(f.grupo) && !tercerosAsignados.has(f.equipo),
-      );
-      if (elegido === undefined) return null;
-      tercerosAsignados.add(elegido.equipo);
-      return elegido.equipo;
+    if (RE_TERCEROS.test(etiqueta)) {
+      return terceroPorSlot.get(claveSlot) ?? null;
     }
     m = RE_GANADOR.exec(etiqueta);
     if (m !== null) return avance.get(Number(m[1]))?.ganador ?? null;
@@ -115,8 +144,8 @@ export function resolverBracket(
   };
 
   for (const partido of eliminatorias) {
-    const local = resolverEtiqueta(partido.equipo_local);
-    const visitante = resolverEtiqueta(partido.equipo_visitante);
+    const local = resolverEtiqueta(partido.equipo_local, `${partido.id}:local`);
+    const visitante = resolverEtiqueta(partido.equipo_visitante, `${partido.id}:visitante`);
     resultado.set(partido.id, { local, visitante });
 
     const pred = prediccionPorPartido.get(partido.id);

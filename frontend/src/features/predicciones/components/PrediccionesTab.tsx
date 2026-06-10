@@ -139,7 +139,12 @@ export function PrediccionesTab({ quinielaId }: { quinielaId: number }) {
         <p className="rounded-lg border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800">
           Te falta{faltantes.length === 1 ? "" : "n"} por predecir:{" "}
           {faltantes
-            .map((p) => `#${p.numero} ${p.equipo_local} vs ${p.equipo_visitante}`)
+            .map((p) => {
+              const simulados = equiposResueltos.get(p.id);
+              const local = simulados?.local ?? p.equipo_local;
+              const visitante = simulados?.visitante ?? p.equipo_visitante;
+              return `#${p.numero} ${local} vs ${visitante}`;
+            })
             .join(" · ")}
         </p>
       )}

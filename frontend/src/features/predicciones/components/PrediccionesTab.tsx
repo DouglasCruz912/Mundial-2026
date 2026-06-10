@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { usePartidos } from "@/features/partidos/hooks/usePartidos";
 
 import { useMisPredicciones } from "../hooks/usePredicciones";
@@ -18,8 +19,17 @@ const VISTAS = [
 
 type VistaId = (typeof VISTAS)[number]["id"];
 
+/** Sin acentos y en minúsculas: "Mexico" encuentra "México". */
+function normalizar(texto: string): string {
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 export function PrediccionesTab({ quinielaId }: { quinielaId: number }) {
   const [vista, setVista] = useState<VistaId>("grupos");
+  const [busqueda, setBusqueda] = useState("");
   const partidosQuery = usePartidos();
   const prediccionesQuery = useMisPredicciones(quinielaId);
 
@@ -39,9 +49,21 @@ export function PrediccionesTab({ quinielaId }: { quinielaId: number }) {
   const equiposResueltos = resolverBracket(partidos, prediccionPorPartido);
 
   const vistaActual = VISTAS.find((v) => v.id === vista) ?? VISTAS[0];
-  const visibles = partidos.filter((p) =>
-    (vistaActual.fases as readonly string[]).includes(p.fase),
-  );
+  const consulta = normalizar(busqueda.trim());
+  // Con búsqueda activa se recorre TODO el torneo (incluye equipos simulados);
+  // sin búsqueda, solo la fase de la vista seleccionada.
+  const visibles =
+    consulta !== ""
+      ? partidos.filter((p) => {
+          const simulados = equiposResueltos.get(p.id);
+          return [
+            p.equipo_local,
+            p.equipo_visitante,
+            simulados?.local ?? "",
+            simulados?.visitante ?? "",
+          ].some((equipo) => normalizar(equipo).includes(consulta));
+        })
+      : partidos.filter((p) => (vistaActual.fases as readonly string[]).includes(p.fase));
 
   const conteo = (fases: readonly string[]) => {
     const delGrupo = partidos.filter((p) => fases.includes(p.fase));
@@ -56,7 +78,30 @@ export function PrediccionesTab({ quinielaId }: { quinielaId: number }) {
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Fase del torneo">
+      <div className="flex flex-wrap items-center gap-1.5">
+        <label className="sr-only" htmlFor="buscar-pais">
+          Buscar por país
+        </label>
+        <Input
+          id="buscar-pais"
+          type="search"
+          placeholder="Buscar por país… (ej. México)"
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+          className="h-8 w-56"
+        />
+        {busqueda !== "" && (
+          <Button variant="ghost" size="sm" onClick={() => setBusqueda("")}>
+            Limpiar
+          </Button>
+        )}
+      </div>
+
+      <div
+        className={`flex flex-wrap gap-1.5 ${consulta !== "" ? "pointer-events-none opacity-50" : ""}`}
+        role="tablist"
+        aria-label="Fase del torneo"
+      >
         {VISTAS.map((v) => {
           const { predichos, total } = conteo(v.fases);
           const completo = predichos === total && total > 0;
@@ -96,6 +141,13 @@ export function PrediccionesTab({ quinielaId }: { quinielaId: number }) {
           {faltantes
             .map((p) => `#${p.numero} ${p.equipo_local} vs ${p.equipo_visitante}`)
             .join(" · ")}
+        </p>
+      )}
+
+      {consulta !== "" && visibles.length === 0 && (
+        <p className="rounded-lg border bg-background p-4 text-center text-sm text-muted-foreground">
+          Ningún partido coincide con «{busqueda}». Los cruces de eliminatorias solo aparecen
+          cuando tu bracket ya tiene a ese país clasificado.
         </p>
       )}
 

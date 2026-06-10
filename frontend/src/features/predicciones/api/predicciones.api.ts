@@ -9,7 +9,11 @@ export const prediccionKeys = {
 };
 
 export function fetchMisPredicciones(quinielaId: number) {
-  return api(`/api/v1/quinielas/${quinielaId}/predicciones/me`, z.array(prediccionSchema));
+  // hasta 104 predicciones (torneo completo): cabe en una página
+  return api(
+    `/api/v1/quinielas/${quinielaId}/predicciones/me?limit=200`,
+    z.array(prediccionSchema),
+  );
 }
 
 export function guardarPrediccion(

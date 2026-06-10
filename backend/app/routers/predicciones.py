@@ -49,7 +49,7 @@ async def mis_predicciones(
     quiniela_id: int,
     session: SessionDep,
     user: Lector,
-    limit: Annotated[int, Query(ge=1, le=100)] = 100,
+    limit: Annotated[int, Query(ge=1, le=200)] = 200,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> list[PrediccionPublic]:
     participacion = await _participacion_propia(session, user.id, quiniela_id)

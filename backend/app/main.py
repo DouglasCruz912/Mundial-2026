@@ -34,9 +34,13 @@ app.add_middleware(
 
 register_exception_handlers(app)
 
-from app.routers import auth  # noqa: E402
+from app.routers import auth, leaderboard, partidos, predicciones, quinielas  # noqa: E402
 
 app.include_router(auth.router)
+app.include_router(quinielas.router)
+app.include_router(partidos.router)
+app.include_router(predicciones.router)
+app.include_router(leaderboard.router)
 
 
 @app.get("/api/v1/health", tags=["health"])

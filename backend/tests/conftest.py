@@ -10,7 +10,11 @@ import pytest
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
+from app.core.rate_limit import limiter
 from app.core.security import get_password_hash
+
+# El rate limiting se prueba aparte; desactivado para no acumular 429 entre tests
+limiter.enabled = False
 from app.db.base import Base
 from app.db.session import get_session
 from app.main import app

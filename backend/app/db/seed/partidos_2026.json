@@ -1,0 +1,834 @@
+[
+  {
+    "numero": 1,
+    "fase": "grupos",
+    "grupo": "A",
+    "equipo_local": "México",
+    "equipo_visitante": "Equipo A2",
+    "fecha_hora": "2026-06-11T16:00:00Z"
+  },
+  {
+    "numero": 2,
+    "fase": "grupos",
+    "grupo": "A",
+    "equipo_local": "Equipo A3",
+    "equipo_visitante": "Equipo A4",
+    "fecha_hora": "2026-06-11T16:00:00Z"
+  },
+  {
+    "numero": 3,
+    "fase": "grupos",
+    "grupo": "B",
+    "equipo_local": "Canadá",
+    "equipo_visitante": "Equipo B2",
+    "fecha_hora": "2026-06-11T19:00:00Z"
+  },
+  {
+    "numero": 4,
+    "fase": "grupos",
+    "grupo": "B",
+    "equipo_local": "Equipo B3",
+    "equipo_visitante": "Equipo B4",
+    "fecha_hora": "2026-06-11T19:00:00Z"
+  },
+  {
+    "numero": 5,
+    "fase": "grupos",
+    "grupo": "C",
+    "equipo_local": "Equipo C1",
+    "equipo_visitante": "Equipo C2",
+    "fecha_hora": "2026-06-11T22:00:00Z"
+  },
+  {
+    "numero": 6,
+    "fase": "grupos",
+    "grupo": "C",
+    "equipo_local": "Equipo C3",
+    "equipo_visitante": "Equipo C4",
+    "fecha_hora": "2026-06-11T22:00:00Z"
+  },
+  {
+    "numero": 7,
+    "fase": "grupos",
+    "grupo": "D",
+    "equipo_local": "Estados Unidos",
+    "equipo_visitante": "Equipo D2",
+    "fecha_hora": "2026-06-12T16:00:00Z"
+  },
+  {
+    "numero": 8,
+    "fase": "grupos",
+    "grupo": "D",
+    "equipo_local": "Equipo D3",
+    "equipo_visitante": "Equipo D4",
+    "fecha_hora": "2026-06-12T16:00:00Z"
+  },
+  {
+    "numero": 9,
+    "fase": "grupos",
+    "grupo": "E",
+    "equipo_local": "Equipo E1",
+    "equipo_visitante": "Equipo E2",
+    "fecha_hora": "2026-06-12T19:00:00Z"
+  },
+  {
+    "numero": 10,
+    "fase": "grupos",
+    "grupo": "E",
+    "equipo_local": "Equipo E3",
+    "equipo_visitante": "Equipo E4",
+    "fecha_hora": "2026-06-12T19:00:00Z"
+  },
+  {
+    "numero": 11,
+    "fase": "grupos",
+    "grupo": "F",
+    "equipo_local": "Equipo F1",
+    "equipo_visitante": "Equipo F2",
+    "fecha_hora": "2026-06-12T22:00:00Z"
+  },
+  {
+    "numero": 12,
+    "fase": "grupos",
+    "grupo": "F",
+    "equipo_local": "Equipo F3",
+    "equipo_visitante": "Equipo F4",
+    "fecha_hora": "2026-06-12T22:00:00Z"
+  },
+  {
+    "numero": 13,
+    "fase": "grupos",
+    "grupo": "G",
+    "equipo_local": "Equipo G1",
+    "equipo_visitante": "Equipo G2",
+    "fecha_hora": "2026-06-13T16:00:00Z"
+  },
+  {
+    "numero": 14,
+    "fase": "grupos",
+    "grupo": "G",
+    "equipo_local": "Equipo G3",
+    "equipo_visitante": "Equipo G4",
+    "fecha_hora": "2026-06-13T16:00:00Z"
+  },
+  {
+    "numero": 15,
+    "fase": "grupos",
+    "grupo": "H",
+    "equipo_local": "Equipo H1",
+    "equipo_visitante": "Equipo H2",
+    "fecha_hora": "2026-06-13T19:00:00Z"
+  },
+  {
+    "numero": 16,
+    "fase": "grupos",
+    "grupo": "H",
+    "equipo_local": "Equipo H3",
+    "equipo_visitante": "Equipo H4",
+    "fecha_hora": "2026-06-13T19:00:00Z"
+  },
+  {
+    "numero": 17,
+    "fase": "grupos",
+    "grupo": "I",
+    "equipo_local": "Equipo I1",
+    "equipo_visitante": "Equipo I2",
+    "fecha_hora": "2026-06-13T22:00:00Z"
+  },
+  {
+    "numero": 18,
+    "fase": "grupos",
+    "grupo": "I",
+    "equipo_local": "Equipo I3",
+    "equipo_visitante": "Equipo I4",
+    "fecha_hora": "2026-06-13T22:00:00Z"
+  },
+  {
+    "numero": 19,
+    "fase": "grupos",
+    "grupo": "J",
+    "equipo_local": "Equipo J1",
+    "equipo_visitante": "Equipo J2",
+    "fecha_hora": "2026-06-14T16:00:00Z"
+  },
+  {
+    "numero": 20,
+    "fase": "grupos",
+    "grupo": "J",
+    "equipo_local": "Equipo J3",
+    "equipo_visitante": "Equipo J4",
+    "fecha_hora": "2026-06-14T16:00:00Z"
+  },
+  {
+    "numero": 21,
+    "fase": "grupos",
+    "grupo": "K",
+    "equipo_local": "Equipo K1",
+    "equipo_visitante": "Equipo K2",
+    "fecha_hora": "2026-06-14T19:00:00Z"
+  },
+  {
+    "numero": 22,
+    "fase": "grupos",
+    "grupo": "K",
+    "equipo_local": "Equipo K3",
+    "equipo_visitante": "Equipo K4",
+    "fecha_hora": "2026-06-14T19:00:00Z"
+  },
+  {
+    "numero": 23,
+    "fase": "grupos",
+    "grupo": "L",
+    "equipo_local": "Equipo L1",
+    "equipo_visitante": "Equipo L2",
+    "fecha_hora": "2026-06-14T22:00:00Z"
+  },
+  {
+    "numero": 24,
+    "fase": "grupos",
+    "grupo": "L",
+    "equipo_local": "Equipo L3",
+    "equipo_visitante": "Equipo L4",
+    "fecha_hora": "2026-06-14T22:00:00Z"
+  },
+  {
+    "numero": 25,
+    "fase": "grupos",
+    "grupo": "A",
+    "equipo_local": "México",
+    "equipo_visitante": "Equipo A3",
+    "fecha_hora": "2026-06-16T16:00:00Z"
+  },
+  {
+    "numero": 26,
+    "fase": "grupos",
+    "grupo": "A",
+    "equipo_local": "Equipo A4",
+    "equipo_visitante": "Equipo A2",
+    "fecha_hora": "2026-06-16T16:00:00Z"
+  },
+  {
+    "numero": 27,
+    "fase": "grupos",
+    "grupo": "B",
+    "equipo_local": "Canadá",
+    "equipo_visitante": "Equipo B3",
+    "fecha_hora": "2026-06-16T19:00:00Z"
+  },
+  {
+    "numero": 28,
+    "fase": "grupos",
+    "grupo": "B",
+    "equipo_local": "Equipo B4",
+    "equipo_visitante": "Equipo B2",
+    "fecha_hora": "2026-06-16T19:00:00Z"
+  },
+  {
+    "numero": 29,
+    "fase": "grupos",
+    "grupo": "C",
+    "equipo_local": "Equipo C1",
+    "equipo_visitante": "Equipo C3",
+    "fecha_hora": "2026-06-16T22:00:00Z"
+  },
+  {
+    "numero": 30,
+    "fase": "grupos",
+    "grupo": "C",
+    "equipo_local": "Equipo C4",
+    "equipo_visitante": "Equipo C2",
+    "fecha_hora": "2026-06-16T22:00:00Z"
+  },
+  {
+    "numero": 31,
+    "fase": "grupos",
+    "grupo": "D",
+    "equipo_local": "Estados Unidos",
+    "equipo_visitante": "Equipo D3",
+    "fecha_hora": "2026-06-17T16:00:00Z"
+  },
+  {
+    "numero": 32,
+    "fase": "grupos",
+    "grupo": "D",
+    "equipo_local": "Equipo D4",
+    "equipo_visitante": "Equipo D2",
+    "fecha_hora": "2026-06-17T16:00:00Z"
+  },
+  {
+    "numero": 33,
+    "fase": "grupos",
+    "grupo": "E",
+    "equipo_local": "Equipo E1",
+    "equipo_visitante": "Equipo E3",
+    "fecha_hora": "2026-06-17T19:00:00Z"
+  },
+  {
+    "numero": 34,
+    "fase": "grupos",
+    "grupo": "E",
+    "equipo_local": "Equipo E4",
+    "equipo_visitante": "Equipo E2",
+    "fecha_hora": "2026-06-17T19:00:00Z"
+  },
+  {
+    "numero": 35,
+    "fase": "grupos",
+    "grupo": "F",
+    "equipo_local": "Equipo F1",
+    "equipo_visitante": "Equipo F3",
+    "fecha_hora": "2026-06-17T22:00:00Z"
+  },
+  {
+    "numero": 36,
+    "fase": "grupos",
+    "grupo": "F",
+    "equipo_local": "Equipo F4",
+    "equipo_visitante": "Equipo F2",
+    "fecha_hora": "2026-06-17T22:00:00Z"
+  },
+  {
+    "numero": 37,
+    "fase": "grupos",
+    "grupo": "G",
+    "equipo_local": "Equipo G1",
+    "equipo_visitante": "Equipo G3",
+    "fecha_hora": "2026-06-18T16:00:00Z"
+  },
+  {
+    "numero": 38,
+    "fase": "grupos",
+    "grupo": "G",
+    "equipo_local": "Equipo G4",
+    "equipo_visitante": "Equipo G2",
+    "fecha_hora": "2026-06-18T16:00:00Z"
+  },
+  {
+    "numero": 39,
+    "fase": "grupos",
+    "grupo": "H",
+    "equipo_local": "Equipo H1",
+    "equipo_visitante": "Equipo H3",
+    "fecha_hora": "2026-06-18T19:00:00Z"
+  },
+  {
+    "numero": 40,
+    "fase": "grupos",
+    "grupo": "H",
+    "equipo_local": "Equipo H4",
+    "equipo_visitante": "Equipo H2",
+    "fecha_hora": "2026-06-18T19:00:00Z"
+  },
+  {
+    "numero": 41,
+    "fase": "grupos",
+    "grupo": "I",
+    "equipo_local": "Equipo I1",
+    "equipo_visitante": "Equipo I3",
+    "fecha_hora": "2026-06-18T22:00:00Z"
+  },
+  {
+    "numero": 42,
+    "fase": "grupos",
+    "grupo": "I",
+    "equipo_local": "Equipo I4",
+    "equipo_visitante": "Equipo I2",
+    "fecha_hora": "2026-06-18T22:00:00Z"
+  },
+  {
+    "numero": 43,
+    "fase": "grupos",
+    "grupo": "J",
+    "equipo_local": "Equipo J1",
+    "equipo_visitante": "Equipo J3",
+    "fecha_hora": "2026-06-19T16:00:00Z"
+  },
+  {
+    "numero": 44,
+    "fase": "grupos",
+    "grupo": "J",
+    "equipo_local": "Equipo J4",
+    "equipo_visitante": "Equipo J2",
+    "fecha_hora": "2026-06-19T16:00:00Z"
+  },
+  {
+    "numero": 45,
+    "fase": "grupos",
+    "grupo": "K",
+    "equipo_local": "Equipo K1",
+    "equipo_visitante": "Equipo K3",
+    "fecha_hora": "2026-06-19T19:00:00Z"
+  },
+  {
+    "numero": 46,
+    "fase": "grupos",
+    "grupo": "K",
+    "equipo_local": "Equipo K4",
+    "equipo_visitante": "Equipo K2",
+    "fecha_hora": "2026-06-19T19:00:00Z"
+  },
+  {
+    "numero": 47,
+    "fase": "grupos",
+    "grupo": "L",
+    "equipo_local": "Equipo L1",
+    "equipo_visitante": "Equipo L3",
+    "fecha_hora": "2026-06-19T22:00:00Z"
+  },
+  {
+    "numero": 48,
+    "fase": "grupos",
+    "grupo": "L",
+    "equipo_local": "Equipo L4",
+    "equipo_visitante": "Equipo L2",
+    "fecha_hora": "2026-06-19T22:00:00Z"
+  },
+  {
+    "numero": 49,
+    "fase": "grupos",
+    "grupo": "A",
+    "equipo_local": "Equipo A4",
+    "equipo_visitante": "México",
+    "fecha_hora": "2026-06-21T16:00:00Z"
+  },
+  {
+    "numero": 50,
+    "fase": "grupos",
+    "grupo": "A",
+    "equipo_local": "Equipo A2",
+    "equipo_visitante": "Equipo A3",
+    "fecha_hora": "2026-06-21T16:00:00Z"
+  },
+  {
+    "numero": 51,
+    "fase": "grupos",
+    "grupo": "B",
+    "equipo_local": "Equipo B4",
+    "equipo_visitante": "Canadá",
+    "fecha_hora": "2026-06-21T19:00:00Z"
+  },
+  {
+    "numero": 52,
+    "fase": "grupos",
+    "grupo": "B",
+    "equipo_local": "Equipo B2",
+    "equipo_visitante": "Equipo B3",
+    "fecha_hora": "2026-06-21T19:00:00Z"
+  },
+  {
+    "numero": 53,
+    "fase": "grupos",
+    "grupo": "C",
+    "equipo_local": "Equipo C4",
+    "equipo_visitante": "Equipo C1",
+    "fecha_hora": "2026-06-21T22:00:00Z"
+  },
+  {
+    "numero": 54,
+    "fase": "grupos",
+    "grupo": "C",
+    "equipo_local": "Equipo C2",
+    "equipo_visitante": "Equipo C3",
+    "fecha_hora": "2026-06-21T22:00:00Z"
+  },
+  {
+    "numero": 55,
+    "fase": "grupos",
+    "grupo": "D",
+    "equipo_local": "Equipo D4",
+    "equipo_visitante": "Estados Unidos",
+    "fecha_hora": "2026-06-22T16:00:00Z"
+  },
+  {
+    "numero": 56,
+    "fase": "grupos",
+    "grupo": "D",
+    "equipo_local": "Equipo D2",
+    "equipo_visitante": "Equipo D3",
+    "fecha_hora": "2026-06-22T16:00:00Z"
+  },
+  {
+    "numero": 57,
+    "fase": "grupos",
+    "grupo": "E",
+    "equipo_local": "Equipo E4",
+    "equipo_visitante": "Equipo E1",
+    "fecha_hora": "2026-06-22T19:00:00Z"
+  },
+  {
+    "numero": 58,
+    "fase": "grupos",
+    "grupo": "E",
+    "equipo_local": "Equipo E2",
+    "equipo_visitante": "Equipo E3",
+    "fecha_hora": "2026-06-22T19:00:00Z"
+  },
+  {
+    "numero": 59,
+    "fase": "grupos",
+    "grupo": "F",
+    "equipo_local": "Equipo F4",
+    "equipo_visitante": "Equipo F1",
+    "fecha_hora": "2026-06-22T22:00:00Z"
+  },
+  {
+    "numero": 60,
+    "fase": "grupos",
+    "grupo": "F",
+    "equipo_local": "Equipo F2",
+    "equipo_visitante": "Equipo F3",
+    "fecha_hora": "2026-06-22T22:00:00Z"
+  },
+  {
+    "numero": 61,
+    "fase": "grupos",
+    "grupo": "G",
+    "equipo_local": "Equipo G4",
+    "equipo_visitante": "Equipo G1",
+    "fecha_hora": "2026-06-23T16:00:00Z"
+  },
+  {
+    "numero": 62,
+    "fase": "grupos",
+    "grupo": "G",
+    "equipo_local": "Equipo G2",
+    "equipo_visitante": "Equipo G3",
+    "fecha_hora": "2026-06-23T16:00:00Z"
+  },
+  {
+    "numero": 63,
+    "fase": "grupos",
+    "grupo": "H",
+    "equipo_local": "Equipo H4",
+    "equipo_visitante": "Equipo H1",
+    "fecha_hora": "2026-06-23T19:00:00Z"
+  },
+  {
+    "numero": 64,
+    "fase": "grupos",
+    "grupo": "H",
+    "equipo_local": "Equipo H2",
+    "equipo_visitante": "Equipo H3",
+    "fecha_hora": "2026-06-23T19:00:00Z"
+  },
+  {
+    "numero": 65,
+    "fase": "grupos",
+    "grupo": "I",
+    "equipo_local": "Equipo I4",
+    "equipo_visitante": "Equipo I1",
+    "fecha_hora": "2026-06-23T22:00:00Z"
+  },
+  {
+    "numero": 66,
+    "fase": "grupos",
+    "grupo": "I",
+    "equipo_local": "Equipo I2",
+    "equipo_visitante": "Equipo I3",
+    "fecha_hora": "2026-06-23T22:00:00Z"
+  },
+  {
+    "numero": 67,
+    "fase": "grupos",
+    "grupo": "J",
+    "equipo_local": "Equipo J4",
+    "equipo_visitante": "Equipo J1",
+    "fecha_hora": "2026-06-24T16:00:00Z"
+  },
+  {
+    "numero": 68,
+    "fase": "grupos",
+    "grupo": "J",
+    "equipo_local": "Equipo J2",
+    "equipo_visitante": "Equipo J3",
+    "fecha_hora": "2026-06-24T16:00:00Z"
+  },
+  {
+    "numero": 69,
+    "fase": "grupos",
+    "grupo": "K",
+    "equipo_local": "Equipo K4",
+    "equipo_visitante": "Equipo K1",
+    "fecha_hora": "2026-06-24T19:00:00Z"
+  },
+  {
+    "numero": 70,
+    "fase": "grupos",
+    "grupo": "K",
+    "equipo_local": "Equipo K2",
+    "equipo_visitante": "Equipo K3",
+    "fecha_hora": "2026-06-24T19:00:00Z"
+  },
+  {
+    "numero": 71,
+    "fase": "grupos",
+    "grupo": "L",
+    "equipo_local": "Equipo L4",
+    "equipo_visitante": "Equipo L1",
+    "fecha_hora": "2026-06-24T22:00:00Z"
+  },
+  {
+    "numero": 72,
+    "fase": "grupos",
+    "grupo": "L",
+    "equipo_local": "Equipo L2",
+    "equipo_visitante": "Equipo L3",
+    "fecha_hora": "2026-06-24T22:00:00Z"
+  },
+  {
+    "numero": 73,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 1",
+    "equipo_visitante": "Clasificado 2",
+    "fecha_hora": "2026-06-28T16:00:00Z"
+  },
+  {
+    "numero": 74,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 3",
+    "equipo_visitante": "Clasificado 4",
+    "fecha_hora": "2026-06-28T19:00:00Z"
+  },
+  {
+    "numero": 75,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 5",
+    "equipo_visitante": "Clasificado 6",
+    "fecha_hora": "2026-06-28T22:00:00Z"
+  },
+  {
+    "numero": 76,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 7",
+    "equipo_visitante": "Clasificado 8",
+    "fecha_hora": "2026-06-29T16:00:00Z"
+  },
+  {
+    "numero": 77,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 9",
+    "equipo_visitante": "Clasificado 10",
+    "fecha_hora": "2026-06-29T19:00:00Z"
+  },
+  {
+    "numero": 78,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 11",
+    "equipo_visitante": "Clasificado 12",
+    "fecha_hora": "2026-06-29T22:00:00Z"
+  },
+  {
+    "numero": 79,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 13",
+    "equipo_visitante": "Clasificado 14",
+    "fecha_hora": "2026-06-30T16:00:00Z"
+  },
+  {
+    "numero": 80,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 15",
+    "equipo_visitante": "Clasificado 16",
+    "fecha_hora": "2026-06-30T19:00:00Z"
+  },
+  {
+    "numero": 81,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 17",
+    "equipo_visitante": "Clasificado 18",
+    "fecha_hora": "2026-06-30T22:00:00Z"
+  },
+  {
+    "numero": 82,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 19",
+    "equipo_visitante": "Clasificado 20",
+    "fecha_hora": "2026-07-01T16:00:00Z"
+  },
+  {
+    "numero": 83,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 21",
+    "equipo_visitante": "Clasificado 22",
+    "fecha_hora": "2026-07-01T19:00:00Z"
+  },
+  {
+    "numero": 84,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 23",
+    "equipo_visitante": "Clasificado 24",
+    "fecha_hora": "2026-07-01T22:00:00Z"
+  },
+  {
+    "numero": 85,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 25",
+    "equipo_visitante": "Clasificado 26",
+    "fecha_hora": "2026-07-02T16:00:00Z"
+  },
+  {
+    "numero": 86,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 27",
+    "equipo_visitante": "Clasificado 28",
+    "fecha_hora": "2026-07-02T19:00:00Z"
+  },
+  {
+    "numero": 87,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 29",
+    "equipo_visitante": "Clasificado 30",
+    "fecha_hora": "2026-07-02T22:00:00Z"
+  },
+  {
+    "numero": 88,
+    "fase": "dieciseisavos",
+    "grupo": null,
+    "equipo_local": "Clasificado 31",
+    "equipo_visitante": "Clasificado 32",
+    "fecha_hora": "2026-07-03T16:00:00Z"
+  },
+  {
+    "numero": 89,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P73",
+    "equipo_visitante": "Ganador P74",
+    "fecha_hora": "2026-07-04T16:00:00Z"
+  },
+  {
+    "numero": 90,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P75",
+    "equipo_visitante": "Ganador P76",
+    "fecha_hora": "2026-07-04T19:00:00Z"
+  },
+  {
+    "numero": 91,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P77",
+    "equipo_visitante": "Ganador P78",
+    "fecha_hora": "2026-07-05T16:00:00Z"
+  },
+  {
+    "numero": 92,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P79",
+    "equipo_visitante": "Ganador P80",
+    "fecha_hora": "2026-07-05T19:00:00Z"
+  },
+  {
+    "numero": 93,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P81",
+    "equipo_visitante": "Ganador P82",
+    "fecha_hora": "2026-07-06T16:00:00Z"
+  },
+  {
+    "numero": 94,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P83",
+    "equipo_visitante": "Ganador P84",
+    "fecha_hora": "2026-07-06T19:00:00Z"
+  },
+  {
+    "numero": 95,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P85",
+    "equipo_visitante": "Ganador P86",
+    "fecha_hora": "2026-07-07T16:00:00Z"
+  },
+  {
+    "numero": 96,
+    "fase": "octavos",
+    "grupo": null,
+    "equipo_local": "Ganador P87",
+    "equipo_visitante": "Ganador P88",
+    "fecha_hora": "2026-07-07T19:00:00Z"
+  },
+  {
+    "numero": 97,
+    "fase": "cuartos",
+    "grupo": null,
+    "equipo_local": "Ganador P89",
+    "equipo_visitante": "Ganador P90",
+    "fecha_hora": "2026-07-09T16:00:00Z"
+  },
+  {
+    "numero": 98,
+    "fase": "cuartos",
+    "grupo": null,
+    "equipo_local": "Ganador P91",
+    "equipo_visitante": "Ganador P92",
+    "fecha_hora": "2026-07-09T19:00:00Z"
+  },
+  {
+    "numero": 99,
+    "fase": "cuartos",
+    "grupo": null,
+    "equipo_local": "Ganador P93",
+    "equipo_visitante": "Ganador P94",
+    "fecha_hora": "2026-07-10T16:00:00Z"
+  },
+  {
+    "numero": 100,
+    "fase": "cuartos",
+    "grupo": null,
+    "equipo_local": "Ganador P95",
+    "equipo_visitante": "Ganador P96",
+    "fecha_hora": "2026-07-10T19:00:00Z"
+  },
+  {
+    "numero": 101,
+    "fase": "semifinal",
+    "grupo": null,
+    "equipo_local": "Ganador P97",
+    "equipo_visitante": "Ganador P98",
+    "fecha_hora": "2026-07-14T16:00:00Z"
+  },
+  {
+    "numero": 102,
+    "fase": "semifinal",
+    "grupo": null,
+    "equipo_local": "Ganador P99",
+    "equipo_visitante": "Ganador P100",
+    "fecha_hora": "2026-07-14T19:00:00Z"
+  },
+  {
+    "numero": 103,
+    "fase": "tercer_puesto",
+    "grupo": null,
+    "equipo_local": "Perdedor P101",
+    "equipo_visitante": "Perdedor P102",
+    "fecha_hora": "2026-07-18T16:00:00Z"
+  },
+  {
+    "numero": 104,
+    "fase": "final",
+    "grupo": null,
+    "equipo_local": "Ganador P101",
+    "equipo_visitante": "Ganador P102",
+    "fecha_hora": "2026-07-19T16:00:00Z"
+  }
+]

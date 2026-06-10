@@ -39,7 +39,7 @@ export function PartidoPrediccionRow({ quinielaId, partido, prediccion }: Props)
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isDirty },
+    formState: { errors, isSubmitting },
   } = useForm<PrediccionForm>({
     resolver: zodResolver(prediccionFormSchema),
     defaultValues: {
@@ -127,7 +127,7 @@ export function PartidoPrediccionRow({ quinielaId, partido, prediccion }: Props)
               aria-invalid={errors.golesVisitante !== undefined}
               {...register("golesVisitante", { valueAsNumber: true })}
             />
-            <Button type="submit" size="sm" disabled={isSubmitting || !isDirty}>
+            <Button type="submit" size="sm" disabled={isSubmitting}>
               {prediccion !== undefined ? "Actualizar" : "Guardar"}
             </Button>
           </form>

@@ -15,6 +15,8 @@ import {
   prediccionFormSchema,
 } from "@/features/predicciones/schemas/prediccion.schema";
 
+import { equipoConBandera } from "@/lib/banderas";
+
 import { useRegistrarResultado } from "../hooks/useRegistrarResultado";
 
 function ResultadoForm({ partido }: { partido: Partido }) {
@@ -112,8 +114,9 @@ export default function AdminResultadosPage() {
                 {formatearFecha(partido.fecha_hora)}
               </p>
               <p className="font-medium">
-                {partido.equipo_local} <span className="text-muted-foreground">vs</span>{" "}
-                {partido.equipo_visitante}
+                {equipoConBandera(partido.equipo_local)}{" "}
+                <span className="text-muted-foreground">vs</span>{" "}
+                {equipoConBandera(partido.equipo_visitante)}
               </p>
             </div>
             <ResultadoForm partido={partido} />

@@ -4,15 +4,15 @@
     "fase": "grupos",
     "grupo": "A",
     "equipo_local": "México",
-    "equipo_visitante": "Equipo A2",
+    "equipo_visitante": "Sudáfrica",
     "fecha_hora": "2026-06-11T16:00:00Z"
   },
   {
     "numero": 2,
     "fase": "grupos",
     "grupo": "A",
-    "equipo_local": "Equipo A3",
-    "equipo_visitante": "Equipo A4",
+    "equipo_local": "Corea del Sur",
+    "equipo_visitante": "Chequia",
     "fecha_hora": "2026-06-11T16:00:00Z"
   },
   {
@@ -20,31 +20,31 @@
     "fase": "grupos",
     "grupo": "B",
     "equipo_local": "Canadá",
-    "equipo_visitante": "Equipo B2",
+    "equipo_visitante": "Bosnia y Herzegovina",
     "fecha_hora": "2026-06-11T19:00:00Z"
   },
   {
     "numero": 4,
     "fase": "grupos",
     "grupo": "B",
-    "equipo_local": "Equipo B3",
-    "equipo_visitante": "Equipo B4",
+    "equipo_local": "Catar",
+    "equipo_visitante": "Suiza",
     "fecha_hora": "2026-06-11T19:00:00Z"
   },
   {
     "numero": 5,
     "fase": "grupos",
     "grupo": "C",
-    "equipo_local": "Equipo C1",
-    "equipo_visitante": "Equipo C2",
+    "equipo_local": "Brasil",
+    "equipo_visitante": "Haití",
     "fecha_hora": "2026-06-11T22:00:00Z"
   },
   {
     "numero": 6,
     "fase": "grupos",
     "grupo": "C",
-    "equipo_local": "Equipo C3",
-    "equipo_visitante": "Equipo C4",
+    "equipo_local": "Marruecos",
+    "equipo_visitante": "Escocia",
     "fecha_hora": "2026-06-11T22:00:00Z"
   },
   {
@@ -52,143 +52,143 @@
     "fase": "grupos",
     "grupo": "D",
     "equipo_local": "Estados Unidos",
-    "equipo_visitante": "Equipo D2",
+    "equipo_visitante": "Paraguay",
     "fecha_hora": "2026-06-12T16:00:00Z"
   },
   {
     "numero": 8,
     "fase": "grupos",
     "grupo": "D",
-    "equipo_local": "Equipo D3",
-    "equipo_visitante": "Equipo D4",
+    "equipo_local": "Turquía",
+    "equipo_visitante": "Australia",
     "fecha_hora": "2026-06-12T16:00:00Z"
   },
   {
     "numero": 9,
     "fase": "grupos",
     "grupo": "E",
-    "equipo_local": "Equipo E1",
-    "equipo_visitante": "Equipo E2",
+    "equipo_local": "Alemania",
+    "equipo_visitante": "Ecuador",
     "fecha_hora": "2026-06-12T19:00:00Z"
   },
   {
     "numero": 10,
     "fase": "grupos",
     "grupo": "E",
-    "equipo_local": "Equipo E3",
-    "equipo_visitante": "Equipo E4",
+    "equipo_local": "Curazao",
+    "equipo_visitante": "Costa de Marfil",
     "fecha_hora": "2026-06-12T19:00:00Z"
   },
   {
     "numero": 11,
     "fase": "grupos",
     "grupo": "F",
-    "equipo_local": "Equipo F1",
-    "equipo_visitante": "Equipo F2",
+    "equipo_local": "Países Bajos",
+    "equipo_visitante": "Japón",
     "fecha_hora": "2026-06-12T22:00:00Z"
   },
   {
     "numero": 12,
     "fase": "grupos",
     "grupo": "F",
-    "equipo_local": "Equipo F3",
-    "equipo_visitante": "Equipo F4",
+    "equipo_local": "Suecia",
+    "equipo_visitante": "Túnez",
     "fecha_hora": "2026-06-12T22:00:00Z"
   },
   {
     "numero": 13,
     "fase": "grupos",
     "grupo": "G",
-    "equipo_local": "Equipo G1",
-    "equipo_visitante": "Equipo G2",
+    "equipo_local": "Bélgica",
+    "equipo_visitante": "Egipto",
     "fecha_hora": "2026-06-13T16:00:00Z"
   },
   {
     "numero": 14,
     "fase": "grupos",
     "grupo": "G",
-    "equipo_local": "Equipo G3",
-    "equipo_visitante": "Equipo G4",
+    "equipo_local": "Irán",
+    "equipo_visitante": "Nueva Zelanda",
     "fecha_hora": "2026-06-13T16:00:00Z"
   },
   {
     "numero": 15,
     "fase": "grupos",
     "grupo": "H",
-    "equipo_local": "Equipo H1",
-    "equipo_visitante": "Equipo H2",
+    "equipo_local": "España",
+    "equipo_visitante": "Cabo Verde",
     "fecha_hora": "2026-06-13T19:00:00Z"
   },
   {
     "numero": 16,
     "fase": "grupos",
     "grupo": "H",
-    "equipo_local": "Equipo H3",
-    "equipo_visitante": "Equipo H4",
+    "equipo_local": "Arabia Saudita",
+    "equipo_visitante": "Uruguay",
     "fecha_hora": "2026-06-13T19:00:00Z"
   },
   {
     "numero": 17,
     "fase": "grupos",
     "grupo": "I",
-    "equipo_local": "Equipo I1",
-    "equipo_visitante": "Equipo I2",
+    "equipo_local": "Francia",
+    "equipo_visitante": "Irak",
     "fecha_hora": "2026-06-13T22:00:00Z"
   },
   {
     "numero": 18,
     "fase": "grupos",
     "grupo": "I",
-    "equipo_local": "Equipo I3",
-    "equipo_visitante": "Equipo I4",
+    "equipo_local": "Noruega",
+    "equipo_visitante": "Senegal",
     "fecha_hora": "2026-06-13T22:00:00Z"
   },
   {
     "numero": 19,
     "fase": "grupos",
     "grupo": "J",
-    "equipo_local": "Equipo J1",
-    "equipo_visitante": "Equipo J2",
+    "equipo_local": "Argentina",
+    "equipo_visitante": "Argelia",
     "fecha_hora": "2026-06-14T16:00:00Z"
   },
   {
     "numero": 20,
     "fase": "grupos",
     "grupo": "J",
-    "equipo_local": "Equipo J3",
-    "equipo_visitante": "Equipo J4",
+    "equipo_local": "Austria",
+    "equipo_visitante": "Jordania",
     "fecha_hora": "2026-06-14T16:00:00Z"
   },
   {
     "numero": 21,
     "fase": "grupos",
     "grupo": "K",
-    "equipo_local": "Equipo K1",
-    "equipo_visitante": "Equipo K2",
+    "equipo_local": "Portugal",
+    "equipo_visitante": "Colombia",
     "fecha_hora": "2026-06-14T19:00:00Z"
   },
   {
     "numero": 22,
     "fase": "grupos",
     "grupo": "K",
-    "equipo_local": "Equipo K3",
-    "equipo_visitante": "Equipo K4",
+    "equipo_local": "RD Congo",
+    "equipo_visitante": "Uzbekistán",
     "fecha_hora": "2026-06-14T19:00:00Z"
   },
   {
     "numero": 23,
     "fase": "grupos",
     "grupo": "L",
-    "equipo_local": "Equipo L1",
-    "equipo_visitante": "Equipo L2",
+    "equipo_local": "Inglaterra",
+    "equipo_visitante": "Croacia",
     "fecha_hora": "2026-06-14T22:00:00Z"
   },
   {
     "numero": 24,
     "fase": "grupos",
     "grupo": "L",
-    "equipo_local": "Equipo L3",
-    "equipo_visitante": "Equipo L4",
+    "equipo_local": "Ghana",
+    "equipo_visitante": "Panamá",
     "fecha_hora": "2026-06-14T22:00:00Z"
   },
   {
@@ -196,15 +196,15 @@
     "fase": "grupos",
     "grupo": "A",
     "equipo_local": "México",
-    "equipo_visitante": "Equipo A3",
+    "equipo_visitante": "Corea del Sur",
     "fecha_hora": "2026-06-16T16:00:00Z"
   },
   {
     "numero": 26,
     "fase": "grupos",
     "grupo": "A",
-    "equipo_local": "Equipo A4",
-    "equipo_visitante": "Equipo A2",
+    "equipo_local": "Chequia",
+    "equipo_visitante": "Sudáfrica",
     "fecha_hora": "2026-06-16T16:00:00Z"
   },
   {
@@ -212,31 +212,31 @@
     "fase": "grupos",
     "grupo": "B",
     "equipo_local": "Canadá",
-    "equipo_visitante": "Equipo B3",
+    "equipo_visitante": "Catar",
     "fecha_hora": "2026-06-16T19:00:00Z"
   },
   {
     "numero": 28,
     "fase": "grupos",
     "grupo": "B",
-    "equipo_local": "Equipo B4",
-    "equipo_visitante": "Equipo B2",
+    "equipo_local": "Suiza",
+    "equipo_visitante": "Bosnia y Herzegovina",
     "fecha_hora": "2026-06-16T19:00:00Z"
   },
   {
     "numero": 29,
     "fase": "grupos",
     "grupo": "C",
-    "equipo_local": "Equipo C1",
-    "equipo_visitante": "Equipo C3",
+    "equipo_local": "Brasil",
+    "equipo_visitante": "Marruecos",
     "fecha_hora": "2026-06-16T22:00:00Z"
   },
   {
     "numero": 30,
     "fase": "grupos",
     "grupo": "C",
-    "equipo_local": "Equipo C4",
-    "equipo_visitante": "Equipo C2",
+    "equipo_local": "Escocia",
+    "equipo_visitante": "Haití",
     "fecha_hora": "2026-06-16T22:00:00Z"
   },
   {
@@ -244,150 +244,150 @@
     "fase": "grupos",
     "grupo": "D",
     "equipo_local": "Estados Unidos",
-    "equipo_visitante": "Equipo D3",
+    "equipo_visitante": "Turquía",
     "fecha_hora": "2026-06-17T16:00:00Z"
   },
   {
     "numero": 32,
     "fase": "grupos",
     "grupo": "D",
-    "equipo_local": "Equipo D4",
-    "equipo_visitante": "Equipo D2",
+    "equipo_local": "Australia",
+    "equipo_visitante": "Paraguay",
     "fecha_hora": "2026-06-17T16:00:00Z"
   },
   {
     "numero": 33,
     "fase": "grupos",
     "grupo": "E",
-    "equipo_local": "Equipo E1",
-    "equipo_visitante": "Equipo E3",
+    "equipo_local": "Alemania",
+    "equipo_visitante": "Curazao",
     "fecha_hora": "2026-06-17T19:00:00Z"
   },
   {
     "numero": 34,
     "fase": "grupos",
     "grupo": "E",
-    "equipo_local": "Equipo E4",
-    "equipo_visitante": "Equipo E2",
+    "equipo_local": "Costa de Marfil",
+    "equipo_visitante": "Ecuador",
     "fecha_hora": "2026-06-17T19:00:00Z"
   },
   {
     "numero": 35,
     "fase": "grupos",
     "grupo": "F",
-    "equipo_local": "Equipo F1",
-    "equipo_visitante": "Equipo F3",
+    "equipo_local": "Países Bajos",
+    "equipo_visitante": "Suecia",
     "fecha_hora": "2026-06-17T22:00:00Z"
   },
   {
     "numero": 36,
     "fase": "grupos",
     "grupo": "F",
-    "equipo_local": "Equipo F4",
-    "equipo_visitante": "Equipo F2",
+    "equipo_local": "Túnez",
+    "equipo_visitante": "Japón",
     "fecha_hora": "2026-06-17T22:00:00Z"
   },
   {
     "numero": 37,
     "fase": "grupos",
     "grupo": "G",
-    "equipo_local": "Equipo G1",
-    "equipo_visitante": "Equipo G3",
+    "equipo_local": "Bélgica",
+    "equipo_visitante": "Irán",
     "fecha_hora": "2026-06-18T16:00:00Z"
   },
   {
     "numero": 38,
     "fase": "grupos",
     "grupo": "G",
-    "equipo_local": "Equipo G4",
-    "equipo_visitante": "Equipo G2",
+    "equipo_local": "Nueva Zelanda",
+    "equipo_visitante": "Egipto",
     "fecha_hora": "2026-06-18T16:00:00Z"
   },
   {
     "numero": 39,
     "fase": "grupos",
     "grupo": "H",
-    "equipo_local": "Equipo H1",
-    "equipo_visitante": "Equipo H3",
+    "equipo_local": "España",
+    "equipo_visitante": "Arabia Saudita",
     "fecha_hora": "2026-06-18T19:00:00Z"
   },
   {
     "numero": 40,
     "fase": "grupos",
     "grupo": "H",
-    "equipo_local": "Equipo H4",
-    "equipo_visitante": "Equipo H2",
+    "equipo_local": "Uruguay",
+    "equipo_visitante": "Cabo Verde",
     "fecha_hora": "2026-06-18T19:00:00Z"
   },
   {
     "numero": 41,
     "fase": "grupos",
     "grupo": "I",
-    "equipo_local": "Equipo I1",
-    "equipo_visitante": "Equipo I3",
+    "equipo_local": "Francia",
+    "equipo_visitante": "Noruega",
     "fecha_hora": "2026-06-18T22:00:00Z"
   },
   {
     "numero": 42,
     "fase": "grupos",
     "grupo": "I",
-    "equipo_local": "Equipo I4",
-    "equipo_visitante": "Equipo I2",
+    "equipo_local": "Senegal",
+    "equipo_visitante": "Irak",
     "fecha_hora": "2026-06-18T22:00:00Z"
   },
   {
     "numero": 43,
     "fase": "grupos",
     "grupo": "J",
-    "equipo_local": "Equipo J1",
-    "equipo_visitante": "Equipo J3",
+    "equipo_local": "Argentina",
+    "equipo_visitante": "Austria",
     "fecha_hora": "2026-06-19T16:00:00Z"
   },
   {
     "numero": 44,
     "fase": "grupos",
     "grupo": "J",
-    "equipo_local": "Equipo J4",
-    "equipo_visitante": "Equipo J2",
+    "equipo_local": "Jordania",
+    "equipo_visitante": "Argelia",
     "fecha_hora": "2026-06-19T16:00:00Z"
   },
   {
     "numero": 45,
     "fase": "grupos",
     "grupo": "K",
-    "equipo_local": "Equipo K1",
-    "equipo_visitante": "Equipo K3",
+    "equipo_local": "Portugal",
+    "equipo_visitante": "RD Congo",
     "fecha_hora": "2026-06-19T19:00:00Z"
   },
   {
     "numero": 46,
     "fase": "grupos",
     "grupo": "K",
-    "equipo_local": "Equipo K4",
-    "equipo_visitante": "Equipo K2",
+    "equipo_local": "Uzbekistán",
+    "equipo_visitante": "Colombia",
     "fecha_hora": "2026-06-19T19:00:00Z"
   },
   {
     "numero": 47,
     "fase": "grupos",
     "grupo": "L",
-    "equipo_local": "Equipo L1",
-    "equipo_visitante": "Equipo L3",
+    "equipo_local": "Inglaterra",
+    "equipo_visitante": "Ghana",
     "fecha_hora": "2026-06-19T22:00:00Z"
   },
   {
     "numero": 48,
     "fase": "grupos",
     "grupo": "L",
-    "equipo_local": "Equipo L4",
-    "equipo_visitante": "Equipo L2",
+    "equipo_local": "Panamá",
+    "equipo_visitante": "Croacia",
     "fecha_hora": "2026-06-19T22:00:00Z"
   },
   {
     "numero": 49,
     "fase": "grupos",
     "grupo": "A",
-    "equipo_local": "Equipo A4",
+    "equipo_local": "Chequia",
     "equipo_visitante": "México",
     "fecha_hora": "2026-06-21T16:00:00Z"
   },
@@ -395,15 +395,15 @@
     "numero": 50,
     "fase": "grupos",
     "grupo": "A",
-    "equipo_local": "Equipo A2",
-    "equipo_visitante": "Equipo A3",
+    "equipo_local": "Sudáfrica",
+    "equipo_visitante": "Corea del Sur",
     "fecha_hora": "2026-06-21T16:00:00Z"
   },
   {
     "numero": 51,
     "fase": "grupos",
     "grupo": "B",
-    "equipo_local": "Equipo B4",
+    "equipo_local": "Suiza",
     "equipo_visitante": "Canadá",
     "fecha_hora": "2026-06-21T19:00:00Z"
   },
@@ -411,31 +411,31 @@
     "numero": 52,
     "fase": "grupos",
     "grupo": "B",
-    "equipo_local": "Equipo B2",
-    "equipo_visitante": "Equipo B3",
+    "equipo_local": "Bosnia y Herzegovina",
+    "equipo_visitante": "Catar",
     "fecha_hora": "2026-06-21T19:00:00Z"
   },
   {
     "numero": 53,
     "fase": "grupos",
     "grupo": "C",
-    "equipo_local": "Equipo C4",
-    "equipo_visitante": "Equipo C1",
+    "equipo_local": "Escocia",
+    "equipo_visitante": "Brasil",
     "fecha_hora": "2026-06-21T22:00:00Z"
   },
   {
     "numero": 54,
     "fase": "grupos",
     "grupo": "C",
-    "equipo_local": "Equipo C2",
-    "equipo_visitante": "Equipo C3",
+    "equipo_local": "Haití",
+    "equipo_visitante": "Marruecos",
     "fecha_hora": "2026-06-21T22:00:00Z"
   },
   {
     "numero": 55,
     "fase": "grupos",
     "grupo": "D",
-    "equipo_local": "Equipo D4",
+    "equipo_local": "Australia",
     "equipo_visitante": "Estados Unidos",
     "fecha_hora": "2026-06-22T16:00:00Z"
   },
@@ -443,136 +443,136 @@
     "numero": 56,
     "fase": "grupos",
     "grupo": "D",
-    "equipo_local": "Equipo D2",
-    "equipo_visitante": "Equipo D3",
+    "equipo_local": "Paraguay",
+    "equipo_visitante": "Turquía",
     "fecha_hora": "2026-06-22T16:00:00Z"
   },
   {
     "numero": 57,
     "fase": "grupos",
     "grupo": "E",
-    "equipo_local": "Equipo E4",
-    "equipo_visitante": "Equipo E1",
+    "equipo_local": "Costa de Marfil",
+    "equipo_visitante": "Alemania",
     "fecha_hora": "2026-06-22T19:00:00Z"
   },
   {
     "numero": 58,
     "fase": "grupos",
     "grupo": "E",
-    "equipo_local": "Equipo E2",
-    "equipo_visitante": "Equipo E3",
+    "equipo_local": "Ecuador",
+    "equipo_visitante": "Curazao",
     "fecha_hora": "2026-06-22T19:00:00Z"
   },
   {
     "numero": 59,
     "fase": "grupos",
     "grupo": "F",
-    "equipo_local": "Equipo F4",
-    "equipo_visitante": "Equipo F1",
+    "equipo_local": "Túnez",
+    "equipo_visitante": "Países Bajos",
     "fecha_hora": "2026-06-22T22:00:00Z"
   },
   {
     "numero": 60,
     "fase": "grupos",
     "grupo": "F",
-    "equipo_local": "Equipo F2",
-    "equipo_visitante": "Equipo F3",
+    "equipo_local": "Japón",
+    "equipo_visitante": "Suecia",
     "fecha_hora": "2026-06-22T22:00:00Z"
   },
   {
     "numero": 61,
     "fase": "grupos",
     "grupo": "G",
-    "equipo_local": "Equipo G4",
-    "equipo_visitante": "Equipo G1",
+    "equipo_local": "Nueva Zelanda",
+    "equipo_visitante": "Bélgica",
     "fecha_hora": "2026-06-23T16:00:00Z"
   },
   {
     "numero": 62,
     "fase": "grupos",
     "grupo": "G",
-    "equipo_local": "Equipo G2",
-    "equipo_visitante": "Equipo G3",
+    "equipo_local": "Egipto",
+    "equipo_visitante": "Irán",
     "fecha_hora": "2026-06-23T16:00:00Z"
   },
   {
     "numero": 63,
     "fase": "grupos",
     "grupo": "H",
-    "equipo_local": "Equipo H4",
-    "equipo_visitante": "Equipo H1",
+    "equipo_local": "Uruguay",
+    "equipo_visitante": "España",
     "fecha_hora": "2026-06-23T19:00:00Z"
   },
   {
     "numero": 64,
     "fase": "grupos",
     "grupo": "H",
-    "equipo_local": "Equipo H2",
-    "equipo_visitante": "Equipo H3",
+    "equipo_local": "Cabo Verde",
+    "equipo_visitante": "Arabia Saudita",
     "fecha_hora": "2026-06-23T19:00:00Z"
   },
   {
     "numero": 65,
     "fase": "grupos",
     "grupo": "I",
-    "equipo_local": "Equipo I4",
-    "equipo_visitante": "Equipo I1",
+    "equipo_local": "Senegal",
+    "equipo_visitante": "Francia",
     "fecha_hora": "2026-06-23T22:00:00Z"
   },
   {
     "numero": 66,
     "fase": "grupos",
     "grupo": "I",
-    "equipo_local": "Equipo I2",
-    "equipo_visitante": "Equipo I3",
+    "equipo_local": "Irak",
+    "equipo_visitante": "Noruega",
     "fecha_hora": "2026-06-23T22:00:00Z"
   },
   {
     "numero": 67,
     "fase": "grupos",
     "grupo": "J",
-    "equipo_local": "Equipo J4",
-    "equipo_visitante": "Equipo J1",
+    "equipo_local": "Jordania",
+    "equipo_visitante": "Argentina",
     "fecha_hora": "2026-06-24T16:00:00Z"
   },
   {
     "numero": 68,
     "fase": "grupos",
     "grupo": "J",
-    "equipo_local": "Equipo J2",
-    "equipo_visitante": "Equipo J3",
+    "equipo_local": "Argelia",
+    "equipo_visitante": "Austria",
     "fecha_hora": "2026-06-24T16:00:00Z"
   },
   {
     "numero": 69,
     "fase": "grupos",
     "grupo": "K",
-    "equipo_local": "Equipo K4",
-    "equipo_visitante": "Equipo K1",
+    "equipo_local": "Uzbekistán",
+    "equipo_visitante": "Portugal",
     "fecha_hora": "2026-06-24T19:00:00Z"
   },
   {
     "numero": 70,
     "fase": "grupos",
     "grupo": "K",
-    "equipo_local": "Equipo K2",
-    "equipo_visitante": "Equipo K3",
+    "equipo_local": "Colombia",
+    "equipo_visitante": "RD Congo",
     "fecha_hora": "2026-06-24T19:00:00Z"
   },
   {
     "numero": 71,
     "fase": "grupos",
     "grupo": "L",
-    "equipo_local": "Equipo L4",
-    "equipo_visitante": "Equipo L1",
+    "equipo_local": "Panamá",
+    "equipo_visitante": "Inglaterra",
     "fecha_hora": "2026-06-24T22:00:00Z"
   },
   {
     "numero": 72,
     "fase": "grupos",
     "grupo": "L",
-    "equipo_local": "Equipo L2",
-    "equipo_visitante": "Equipo L3",
+    "equipo_local": "Croacia",
+    "equipo_visitante": "Ghana",
     "fecha_hora": "2026-06-24T22:00:00Z"
   },
   {

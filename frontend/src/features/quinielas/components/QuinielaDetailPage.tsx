@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LeaderboardTab } from "@/features/leaderboard/components/LeaderboardTab";
+import { MapaTorneoTab } from "@/features/partidos/components/MapaTorneoTab";
 import { PrediccionesTab } from "@/features/predicciones/components/PrediccionesTab";
 
 import { useQuiniela } from "../hooks/useQuinielas";
@@ -48,10 +49,14 @@ export default function QuinielaDetailPage() {
       <Tabs defaultValue="predicciones">
         <TabsList>
           <TabsTrigger value="predicciones">Partidos y mis predicciones</TabsTrigger>
+          <TabsTrigger value="mapa">Mapa del torneo</TabsTrigger>
           <TabsTrigger value="leaderboard">Tabla de posiciones</TabsTrigger>
         </TabsList>
         <TabsContent value="predicciones" className="mt-4">
           <PrediccionesTab quinielaId={quinielaId} />
+        </TabsContent>
+        <TabsContent value="mapa" className="mt-4">
+          <MapaTorneoTab quinielaId={quinielaId} />
         </TabsContent>
         <TabsContent value="leaderboard" className="mt-4">
           <LeaderboardTab quinielaId={quinielaId} />

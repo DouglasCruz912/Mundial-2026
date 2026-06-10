@@ -1,8 +1,9 @@
 """Genera app/db/seed/partidos_2026.json con los 104 partidos del Mundial 2026.
 
-Equipos como placeholders ("Equipo A2", "1° Grupo A"): el seed es idempotente
-por `numero`, así que al conocerse los equipos reales basta editar el JSON
-(o este generador) y re-ejecutar el seed sin tocar resultados.
+Grupos según el sorteo oficial (dic 2025) + repechajes (mar 2026). Las
+eliminatorias usan placeholders ("Ganador P74"): el seed es idempotente por
+`numero`, así que basta re-ejecutarlo tras editar equipos/fechas, sin tocar
+resultados ya cargados.
 
 Uso: python -m scripts.generar_fixture
 """
@@ -12,8 +13,21 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 GRUPOS = "ABCDEFGHIJKL"
-# Anfitriones con posición conocida en el calendario oficial
-ANFITRIONES = {"A": "México", "B": "Canadá", "D": "Estados Unidos"}
+# Sorteo oficial del Mundial 2026 (cabeza de serie primero)
+EQUIPOS_POR_GRUPO = {
+    "A": ["México", "Sudáfrica", "Corea del Sur", "Chequia"],
+    "B": ["Canadá", "Bosnia y Herzegovina", "Catar", "Suiza"],
+    "C": ["Brasil", "Haití", "Marruecos", "Escocia"],
+    "D": ["Estados Unidos", "Paraguay", "Turquía", "Australia"],
+    "E": ["Alemania", "Ecuador", "Curazao", "Costa de Marfil"],
+    "F": ["Países Bajos", "Japón", "Suecia", "Túnez"],
+    "G": ["Bélgica", "Egipto", "Irán", "Nueva Zelanda"],
+    "H": ["España", "Cabo Verde", "Arabia Saudita", "Uruguay"],
+    "I": ["Francia", "Irak", "Noruega", "Senegal"],
+    "J": ["Argentina", "Argelia", "Austria", "Jordania"],
+    "K": ["Portugal", "Colombia", "RD Congo", "Uzbekistán"],
+    "L": ["Inglaterra", "Croacia", "Ghana", "Panamá"],
+}
 # Horarios típicos de jornada (UTC)
 HORAS = [16, 19, 22]
 
@@ -23,9 +37,7 @@ JORNADAS = [(1, 2), (3, 4), (1, 3), (4, 2), (4, 1), (2, 3)]
 
 
 def nombre_equipo(grupo: str, pos: int) -> str:
-    if pos == 1 and grupo in ANFITRIONES:
-        return ANFITRIONES[grupo]
-    return f"Equipo {grupo}{pos}"
+    return EQUIPOS_POR_GRUPO[grupo][pos - 1]
 
 
 def generar() -> list[dict]:

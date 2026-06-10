@@ -11,6 +11,7 @@ import {
   partidoComenzo,
 } from "@/features/partidos/schemas/partido.schema";
 import { ApiError } from "@/lib/apiClient";
+import { equipoConBandera } from "@/lib/banderas";
 
 import { useGuardarPrediccion } from "../hooks/usePredicciones";
 import {
@@ -73,8 +74,9 @@ export function PartidoPrediccionRow({ quinielaId, partido, prediccion }: Props)
           {formatearFecha(partido.fecha_hora)}
         </p>
         <p className="font-medium">
-          {partido.equipo_local} <span className="text-muted-foreground">vs</span>{" "}
-          {partido.equipo_visitante}
+          {equipoConBandera(partido.equipo_local)}{" "}
+          <span className="text-muted-foreground">vs</span>{" "}
+          {equipoConBandera(partido.equipo_visitante)}
         </p>
         {partido.goles_local !== null && (
           <p className="text-sm">

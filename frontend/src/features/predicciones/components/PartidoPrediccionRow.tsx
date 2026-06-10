@@ -24,6 +24,8 @@ type Props = {
   quinielaId: number;
   partido: Partido;
   prediccion: Prediccion | undefined;
+  /** Equipos de eliminatorias resueltos con las predicciones del usuario. */
+  equiposSimulados?: { local: string | null; visitante: string | null };
 };
 
 function PuntosBadge({ puntos }: { puntos: number | null }) {
@@ -33,8 +35,20 @@ function PuntosBadge({ puntos }: { puntos: number | null }) {
   return <Badge variant="secondary">0 pts</Badge>;
 }
 
-export function PartidoPrediccionRow({ quinielaId, partido, prediccion }: Props) {
+export function PartidoPrediccionRow({
+  quinielaId,
+  partido,
+  prediccion,
+  equiposSimulados,
+}: Props) {
   const bloqueado = partidoComenzo(partido) || partido.goles_local !== null;
+  const localSimulado = equiposSimulados?.local ?? null;
+  const visitanteSimulado = equiposSimulados?.visitante ?? null;
+  const esEliminatoria = partido.fase !== "grupos";
+  const empateEnEliminatoria =
+    esEliminatoria &&
+    prediccion !== undefined &&
+    prediccion.goles_local === prediccion.goles_visitante;
   const guardarMutation = useGuardarPrediccion(quinielaId);
   const {
     register,
@@ -74,10 +88,28 @@ export function PartidoPrediccionRow({ quinielaId, partido, prediccion }: Props)
           {formatearFecha(partido.fecha_hora)}
         </p>
         <p className="flex flex-wrap items-center gap-1.5 font-medium">
-          <EquipoConBandera equipo={partido.equipo_local} />
+          {localSimulado !== null ? (
+            <span title={`Según tus predicciones (${partido.equipo_local})`}>
+              <EquipoConBandera equipo={localSimulado} />*
+            </span>
+          ) : (
+            <EquipoConBandera equipo={partido.equipo_local} />
+          )}
           <span className="text-muted-foreground">vs</span>
-          <EquipoConBandera equipo={partido.equipo_visitante} />
+          {visitanteSimulado !== null ? (
+            <span title={`Según tus predicciones (${partido.equipo_visitante})`}>
+              <EquipoConBandera equipo={visitanteSimulado} />*
+            </span>
+          ) : (
+            <EquipoConBandera equipo={partido.equipo_visitante} />
+          )}
         </p>
+        {empateEnEliminatoria && (
+          <p className="text-xs text-amber-600">
+            Empate: no define quién avanza a la siguiente ronda. Pon un ganador para continuar
+            tu bracket.
+          </p>
+        )}
         {partido.goles_local !== null && (
           <p className="text-sm">
             Resultado:{" "}
